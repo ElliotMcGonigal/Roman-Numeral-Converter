@@ -2,10 +2,14 @@
 const symbols = ["I", "V", "X", "L", "C", "D", "M"]
 function romanNumerals(number) {
   let result = "";
-  if (number === 1) {
-    result = symbols[0];
+  userInput = parseInt(number);
+
+  for (let i = 0; i < userInput; i++) {
+    result = result.concat(symbols[0]);
+    
   }
 
+  
   return result;
 }
 

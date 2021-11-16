@@ -7,8 +7,8 @@ Code: romanNumerals(1);
 Expect: 'I'
 
 <br>
-Test:
+Test: If we input "1", "2", or "3", we want to display "I", "II", or "III"
 <br>
-Code: 
+Code: romanNumerals(1); romanNumerals(2); romanNumerals(3);
 <br>
-Expect:
+Expect:"I"; "II"; "III"
