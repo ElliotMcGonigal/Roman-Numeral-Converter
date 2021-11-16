@@ -11,6 +11,11 @@ function romanNumerals(number) {
     }
   }
 
+  else if (userInput === 4) {
+    result = result.concat(symbols[1])
+    result = symbols[0] + result;
+  }
+
   else if (userInput <= 8) {
     result = result.concat(symbols[1]);
     for (let i = 0; i < (userInput - 5); i++) {
@@ -18,10 +23,15 @@ function romanNumerals(number) {
     }
   }
 
+  else if (userInput === 9) {
+    result = symbols[0] + symbols[2];
+  }
+
+  
   
   return result;
 }
- 
+
 /*
 I  symbol[0]     X  symbol[2]
 II      XX

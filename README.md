@@ -18,4 +18,11 @@ Test: If we input '5', we want to display 'V'
 <br>
 Code: romanNumerals(5);
 <br>
-Expect: Expect: 'V'
+Expect: 'V'
+
+<br>
+Test: If we input '4' or '9', we want to display 'IV' or 'IX' respectively
+<br>
+Code: romanNumerals(4); romanNumerals(9);
+<br>
+Expect: 'IV'; 'IX'
