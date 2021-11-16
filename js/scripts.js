@@ -2,32 +2,38 @@
 const symbols = ["I", "V", "X", "L", "C", "D", "M"]
 function romanNumerals(number) {
   let result = "";
-  userInput = parseInt(number);
-
-  if (userInput <= 3) {
-    for (let i = 0; i < userInput; i++) {
-      result = result.concat(symbols[0]);
+  const userInput = number.split("");
+  
+  userInput.forEach(function(element, index) {
+    let eleParse = parseInt(element);
+    if (eleParse === 0)
+    {
       
     }
-  }
-
-  else if (userInput === 4) {
-    result = result.concat(symbols[1])
-    result = symbols[0] + result;
-  }
-
-  else if (userInput <= 8) {
-    result = result.concat(symbols[1]);
-    for (let i = 0; i < (userInput - 5); i++) {
-      result = result.concat(symbols[0]);
+    if (eleParse <= 3) {
+      for (let i = 0; i < eleParse; i++) {
+        result = result.concat(symbols[0 + (2*index)]);
+        
+      }
     }
-  }
 
-  else if (userInput === 9) {
-    result = symbols[0] + symbols[2];
-  }
+    else if (eleParse === 4) {
+      result = result.concat(symbols[1 + (2*index)])
+      result = symbols[0 + (2*index)] + result;
+    }
 
-  
+    else if (eleParse <= 8) {
+      result = result.concat(symbols[1 + (2*index)]);
+      for (let i = 0; i < (eleParse - 5); i++) {
+        result = result.concat(symbols[0 + (2*index)]);
+      }
+    }
+
+    else if (eleParse === 9) {
+      result = symbols[0 + (2*index)] + symbols[2 + (2*index)];
+    }
+
+  });
   
   return result;
 }
