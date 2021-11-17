@@ -4,7 +4,7 @@ function romanNumerals(number) {
   let result = "";
   const userInput = number.split("");
   const reverseArray = userInput.reverse();
-  console.log(reverseArray);
+  
   reverseArray.forEach(function(element, index) {
     let eleParse = parseInt(element);
     if (eleParse <= 3) {
@@ -31,23 +31,5 @@ function romanNumerals(number) {
   
   return result;
 }
-
-/*
-I  symbol[0]     X  symbol[2]
-II      XX
-III     XXX if number <= 3
-IV      XL if == 4
-V   symbol[1]   L   symbol[3]if number <= 8
-VI      LX
-VII     LXX
-VIII    LXXX
-IX       XC if == 9
-X     symbol[2]    C  symbol[4]
- concat(symbols[0],symbols[2]) + concat(symbols[2],symbols[4])
-IX
-XC 
-XC   IX
-*/
-
 
 
