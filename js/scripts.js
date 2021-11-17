@@ -3,34 +3,28 @@ const symbols = ["I", "V", "X", "L", "C", "D", "M"]
 function romanNumerals(number) {
   let result = "";
   const userInput = number.split("");
-  
-  userInput.forEach(function(element, index) {
+  const reverseArray = userInput.reverse();
+  console.log(reverseArray);
+  reverseArray.forEach(function(element, index) {
     let eleParse = parseInt(element);
-    if (eleParse === 0)
-    {
-      
-    }
     if (eleParse <= 3) {
       for (let i = 0; i < eleParse; i++) {
-        result = result.concat(symbols[0 + (2*index)]);
-        
+        result = symbols[0 + (2*index)] + result;
       }
     }
-
     else if (eleParse === 4) {
-      result = result.concat(symbols[1 + (2*index)])
-      result = symbols[0 + (2*index)] + result;
+      result = symbols[0 + (2*index)] + symbols[1 + (2*index)] + result;
     }
 
     else if (eleParse <= 8) {
-      result = result.concat(symbols[1 + (2*index)]);
       for (let i = 0; i < (eleParse - 5); i++) {
-        result = result.concat(symbols[0 + (2*index)]);
+        result = symbols[0 + (2*index)] + result;
       }
+      result = symbols[1 + (2*index)] + result;
     }
-
+    
     else if (eleParse === 9) {
-      result = symbols[0 + (2*index)] + symbols[2 + (2*index)];
+      result = symbols[0 + (2*index)] + symbols[2 + (2*index)] + result;
     }
 
   });
